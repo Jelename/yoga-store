@@ -8,7 +8,13 @@ let products = [{ referenceNumber: 1231, name: "Super Lite Mat", price: 10 },
   { referenceNumber: 1237, name: "Bring Yoga To Life", price: 30 },
   { referenceNumber: 1238, name: "Light On Yoga", price: 10 }];
 
-function chooseProduct() {
+function addToCart() {
   let input = document.getElementById('refNum').value;
   console.log(input);
+};
+
+function findProduct(input) {
+  return input.referenceNumber === 1232;
 }
+
+console.log(products.find(findProduct));
