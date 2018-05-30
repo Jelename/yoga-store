@@ -10,11 +10,15 @@ let products = [{ referenceNumber: 1231, name: "Super Lite Mat", price: 10 },
 
 function addToCart() {
   let input = document.getElementById('refNum').value;
-  console.log(input);
+  let product = products.find(product => product.referenceNumber == input);
+  //pitaj ovaj deo - poredjenje vrednosti razlicitog tipa
+  shoppingCart.push(product);
+   
+
 };
 
-function findProduct(input) {
-  return input.referenceNumber === 1232;
-}
 
-console.log(products.find(findProduct));
+
+var priceElement = document.createElement('span');
+priceElement.className  = 'price';
+priceElement.innerText = product.price;
