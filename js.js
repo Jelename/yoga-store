@@ -9,16 +9,15 @@ let products = [{ referenceNumber: 1231, name: "Super Lite Mat", price: 10 },
   { referenceNumber: 1238, name: "Light On Yoga", price: 10 }];
 
 function addToCart() {
-  let input = document.getElementById('refNum').value;
-  let product = products.find(product => product.referenceNumber == input);
-  //pitaj ovaj deo - poredjenje vrednosti razlicitog tipa
-  shoppingCart.push(product);
-   
-
+  let input = parseInt(document.getElementById('refNum').value);
+  //I have to be sure that is a number, so I have to convert this input
+  //to a number. I am doing that with parseInt
+  let product = products.find(product => product.referenceNumber === input);
+  console.log(product);
+  //pitaj ovaj deo - poredjenje vrednosti razlicitog tipa -
+  let shoppingList = shoppingCart.push(product);
+  console.log(shoppingList);
+  let shoppingCartPreview = document.getElementById('shoppingCart');
+  //shoppingCartPreview.appendChild(shoppingList);
+  //shoppingCartPreview.appendChild(shoppingCard);
 };
-
-
-
-var priceElement = document.createElement('span');
-priceElement.className  = 'price';
-priceElement.innerText = product.price;
